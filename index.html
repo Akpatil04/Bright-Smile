@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mansi Patil Dental Clinic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary-color: #00a3e8;
+            --primary-dark: #0077b6;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+            --text-color: #333;
+            --text-light: #6c757d;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        @media (min-width: 576px) {
+            .container {
+                max-width: 540px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                max-width: 720px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .logo i {
+            margin-right: 10px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                        url('bg.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .hero-btns .btn {
+            padding: 15px 40px;
+        }
+
+        .secondary-btn {
+            background-color: transparent;
+            border: 2px solid var(--white);
+        }
+
+        .secondary-btn:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+        }
+
+        /* Features Cards */
+        .features {
+            background-color: var(--secondary-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 30px;
+            background-color: var(--white);
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+        }
+
+        .service-price {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        /* Team Section */
+        .team {
+            background-color: var(--secondary-color);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background-color: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-img {
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-info {
+            padding: 25px;
+        }
+
+        .team-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+
+        .team-info p {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .team-social a {
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            color: var(--primary-dark);
+            transition: all 0.3s ease;
+        }
+
+        .team-social a:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Testimonials */
+        .testimonials-slider {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 0 15px;
+        }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Appointment Section */
+        .appointment {
+            background: linear-gradient(rgba(0, 163, 232, 0.8), rgba(0, 163, 232, 0.8));
+            color: var(--white);
+            position: relative;
+        }
+
+        .appointment-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .appointment h2 {
+            color: var(--white);
+        }
+
+        .appointment-form {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .contact-item {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-content p {
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: var(--white);
+            padding: 80px 0 30px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #aaa;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 15px;
+            color: #aaa;
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #333;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                flex-direction: column;
+                background-color: var(--white);
+                transition: all 0.5s ease;
+                padding-top: 40px;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 15px 0;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+
+            .btn {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-tooth"></i> Bright Smile
+            </a>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#appointment" class="btn">Appointment</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Your Bright Smile Starts Here</h1>
+            <p>We provide high-quality dental care in a comfortable environment. Our experienced team is dedicated to your oral health and beautiful smile.</p>
+            <div class="hero-btns">
+                <a href="#appointment" class="btn">Book Appointment</a>
+                <a href="#services" class="btn secondary-btn">Our Services</a>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+<section id="about">
+    <div class="container">
+        <div class="section-title">
+            <h2>About Us</h2>
+            <p>At Bright Smile Dental Clinic, we believe a healthy smile is the key to confidence and well-being. Our mission is to provide high-quality dental care with a gentle touch, ensuring every patient feels comfortable and valued.</p>
+        </div>
+        <div class="about-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; align-items: center;">
+            <div>
+                <img src="About.jpg" alt="Dentist with patient" style="border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+            </div>
+            <div>
+                <h3>Our Promise</h3>
+                <p>From preventive care and routine check-ups to advanced cosmetic and restorative treatments, our experienced team is here to help you achieve your best smile. We combine modern technology with a caring approach to make every visit a positive experience.</p>
+                <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                    <li>✔ Experienced & friendly dentists</li>
+                    <li>✔ State-of-the-art equipment</li>
+                    <li>✔ Comfortable, patient-focused care</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Testimonials -->
+<section id="testimonials">
+
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>24/7 Emergency</h3>
+                    <p>Dental emergencies don't keep normal business hours. We're here when you need us most.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3>Expert Dentists</h3>
+                    <p>Our team of specialists have years of experience in all aspects of dental wellness.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Patient Care</h3>
+                    <p>We take the time to understand your concerns and develop personalized treatment plans.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer comprehensive dental services to meet all your oral health needs.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="dentist-7397734_1280.jpg" alt="Dentist performing a routine teeth cleaning procedure with modern equipment" />
+                    </div>
+                    <div class="service-content">
+                        <h3>Teeth Cleaning</h3>
+                        <div class="service-price"> ₹800 to ₹3,500.</div>
+                        <p>Professional cleaning to remove plaque and tartar, preventing gum disease and tooth decay.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="young-female-patient-visiting-dentist-office.jpg" alt="Tooth colored filling being placed to restore damaged tooth in a dental office" />
+                    </div>
+                    <div class="service-content">
+                        <h3>Dental Fillings</h3>
+                        <div class="service-price">₹800 to ₹4,000 or more per tooth</div>
+                        <p>Restore damaged teeth with natural-looking composite or porcelain fillings.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="dental-3754769_1280.jpg" alt="Dental implants procedure showcasing titanium post placed in jawbone" />
+                    </div>
+                    <div class="service-content">
+                        <h3>Dental Implants</h3>
+                        <div class="service-price">₹30,900 to ₹2,50,000 per implant</div>
+                        <p>Permanent solution for missing teeth that look, feel, and function like natural teeth.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="woman-whitening-treatment.jpg" alt="Patient undergoing teeth whitening procedure with bright LED light" />
+                    </div>
+                    <div class="service-content">
+                        <h3>Teeth Whitening</h3>
+                        <div class="service-price">₹5,000 to ₹25,000</div>
+                        <p>Professional-grade whitening treatments to remove stains and brighten your smile.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="dental-procedure-installing-braces-close-up-dentistry-braces-teeth.jpg" alt="Orthodontic braces being adjusted by dentist for teeth alignment" />
+                    </div>
+                    <div class="service-content">
+                        <h3>Orthodontics</h3>
+                        <div class="service-price">₹25,000 to ₹3,00,000</div>
+                        <p>Teeth straightening with traditional braces or clear aligners for a perfect smile.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="beautiful-girl-sitting-dentist-s-office.jpg" alt="Root canal treatment showing precision dental tools and microscope" />
+                    </div>
+                    <div class="service-content">
+                        <h3>Root Canal</h3>
+                        <div class="service-price">₹2,000 to ₹20,000 or more</div>
+                        <p>Save infected or damaged teeth with this comfortable procedure to relieve pain.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section class="team" id="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Meet Our Dentists</h2>
+                <p>Our highly trained dental specialists are dedicated to providing the best care possible.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="HARSHITA-SINGH.jpg" alt="Dr. Sarah Johnson, female dentist with short brown hair, smiling in blue scrubs" />
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Arshita Singh</h3><br>
+                        <p>DDS, General Dentist</p>
+                        <p>Specializes in cosmetic dentistry and preventive<br> care with 15 years of experience.</p>
+                        <div class="team-social">
+                            <a href="https://www.facebook.com/arshita.singh.9440/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/arshi_singh234"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/dr-harshita-singh-a79aab167/recent-activity/all/"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="dr-chandra-mohan.jpg" alt="Dr. Michael Chen, male dentist with glasses examining dental x-rays" />
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. G Chandra Mohan</h3>
+                        <p>DMD, Orthodontist</p>
+                        <p>Expert in braces and aligners, focused on creating beautiful, functional smiles.</p>
+                        <div class="team-social">
+                            <a href="https://www.facebook.com/DrVChandraMohan/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/DrGCMREDDY"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/dr-chandramohan-g-38051913/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="Dr-N-Chandra-Shekhar.jpg" alt="Dr. Lisa Rodriguez, female periodontist with long black hair and warm smile" />
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr.N Chandra Shekhar</h3>
+                        <p>DDS, Periodontist</p>
+                        <p>Specialist in gum disease treatment and dental implants with gentle care approach.</p>
+                        <div class="team-social">
+                            <a href="https://www.facebook.com/vituniversity/photos/dr-n-chandra-sekaran-has-been-awarded-a-doctor-of-science-dsc-degree-in-the-fiel/10159573742364787/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/NishithChandra"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/ninada-k-chandrashekar-993793237/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-img">
+                        <img src="Dr.-J.-Manjula-General-Medicine-300x300.webp" alt="Dr. David Wilson, experienced male pediatric dentist with colorful clinic background" />
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. J. Manjula General</h3>
+                        <p>DDS, Pediatric Dentist</p>
+                        <p>Creates a fun, welcoming environment to help children develop healthy dental habits.</p>
+                        <div class="team-social">
+                            <a href="https://www.facebook.com/IndiaInUK/posts/j-manjula-becomes-first-woman-director-general-of-drdohttpwwwibtimescoinwho-j-ma/865891396860199/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://x.com/ManjulaMeda"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/manjula-j-925a49313/?originalSubdomain=in"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Patient Testimonials</h2>
+                <p>Hear what our patients say about their experience with Bright Smile Dental.</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        "I've been coming to Bright Smile for years and always have a great experience. Dr. Johnson is so gentle and really listens to my concerns. The staff makes me feel comfortable every visit."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/49764eec-a4ff-443f-8362-7aa056664d11.png" alt="Happy female patient Jennifer smiling with beautiful white teeth" />
+                        </div>
+                        <div class="author-info">
+                            <h4>Jennifer M.</h4>
+                            <p>Regular Patient</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment -->
+    <section class="appointment" id="appointment">
+        <div class="container appointment-container">
+            <div class="section-title">
+                <h2>Book an Appointment</h2>
+                <p>Fill out the form below and we'll get back to you as soon as possible to confirm your appointment.</p>
+            </div>
+            <form class="appointment-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="Your Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Needed</label>
+                    <select id="service" class="form-control" required>
+                        <option value="">Select Service</option>
+                        <option value="cleaning">Teeth Cleaning</option>
+                        <option value="filling">Dental Fillings</option>
+                        <option value="implant">Dental Implants</option>
+                        <option value="whitening">Teeth Whitening</option>
+                        <option value="orthodontics">Orthodontics</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information</label>
+                    <textarea id="message" class="form-control" placeholder="Any special requests or details we should know?"></textarea>
+                </div>
+                <button type="submit" class="btn">Book Appointment</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>We'd love to hear from you! Reach out with any questions or to schedule your next visit.</p>
+            </div>
+            <div class="contact-grid">
+                <div>
+                    <div class="contact-info">
+                        <h3>Our Location</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h4>Address</h4>
+                                <p>ameerpet, hyderabad telangana <br>500016</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h4>Phone</h4>
+                                <p>8830482565</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-content">
+                                <h4>Email</h4>
+                                <p>anandpatil265@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Office Hours</h3>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-content">
+                                <p>
+                                    Monday - Friday: 8:00 AM - 7:00 PM<br>
+                                    Saturday: 9:00 AM - 4:00 PM<br>
+                                    Sunday: Closed
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.403990363348!2d78.44452858222412!3d17.440367640798023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90c65546b917%3A0x52221bb22e309083!2sBashir%20Hostel!5e0!3m2!1sen!2sin!4v1755112098073!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Bright Smile</h3>
+                    <p>Providing exceptional dental care with a gentle touch and modern technology to help you achieve your best smile.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/people/Anand-Kalatre/pfbid02ThfaA7LJqmS6Yo3bXWntoaV8mGeLWxWPf4QsQ2z2rmLSeCNz7Mwp8sjqjXcvxjWCl/?sk"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.snapchat.com/add/anand_patil2565?sender_web_id=606588e5-68d6-43d7-928e-4150edefc682&device_type=desktop&is_copy_url=true"><i class="fab fa-snapchat"></i></a>
+                        <a href="https://www.instagram.com/anand_patil2565/?igsh=MXIwdnNwODlvOGw4bg%3D%3D#"><i class="fab fa-instagram"></i></a>
+                        <a href="https:www.linkedin.com/in/anand-patil2565"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#teeth Cleaning">Teeth Cleaning</a></li>
+                        <li><a href="#">Dental Implants</a></li>
+                        <li><a href="#">Teeth Whitening</a></li>
+                        <li><a href="#">Orthodontics</a></li>
+                        <li><a href="#">Root Canals</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <div class="footer-contact">
+                        <p><i class="fas fa-map-marker-alt"></i> ameerpet, hyderabad, telangana 500016</p>
+                        <p><i class="fas fa-phone-alt"></i> 8830482565</p>
+                        <p><i class="fas fa-envelope"></i> anandpatil2565@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 Bright Smile Dental Clinic. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if(this.getAttribute('href') === '#') return;
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if(navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+
+        // Sticky Header on Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+        // Form Submission
+        const appointmentForm = document.querySelector('.appointment-form');
+        if(appointmentForm) {
+            appointmentForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your appointment request! We will contact you shortly to confirm your booking.');
+                appointmentForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
+
